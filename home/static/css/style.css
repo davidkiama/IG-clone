@@ -132,3 +132,30 @@ a {
 .nav-profile__img:hover {
   filter: blur(2px);
 }
+
+.sidebar {
+  flex: 1 0 20%;
+  max-width: 20%;
+  position: sticky;
+  top: 10vh;
+  height: 88vh;
+  padding-left: 5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar__title {
+  font-size: 3rem;
+}
+
+.hashtags {
+  display: flex;
+  flex-direction: column;
+}
+
+.hashtag {
+  font-size: 2rem;
+  line-height: 2;
+}
