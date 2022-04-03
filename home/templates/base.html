@@ -19,7 +19,6 @@
             </h1>
 
             <nav class="navbar">
-
                 <a href="#" class="navbar-item btn">
                     Login
                 </a>
@@ -33,8 +32,6 @@
 
         <main class="main">
             <aside class="sidebar">
-
-
                 <div class="hashtags">
                     <h4 class="sidebar__title">
                         Categories
@@ -47,7 +44,6 @@
 
                 </div>
 
-
                 <div class="profile-image">
                     <img src="../static/img/k" alt="Profile Img"
                         class="user-profile__img">
@@ -57,12 +53,14 @@
                     </a>
                 </div>
 
-
                 <a href="#" class="logout btn">
                     <img src="#" class="logout-icon v">
                     Logout
                 </a>
             </aside>
+
+            {% block content %}
+            {% endblock %}
 
         </main>
 

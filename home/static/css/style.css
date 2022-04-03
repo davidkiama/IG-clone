@@ -159,3 +159,22 @@ a {
   font-size: 2rem;
   line-height: 2;
 }
+
+
+.auth {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth__input {
+  background-color: var(--color-grey);
+  font-size: 1.6rem;
+  outline: none;
+  border: 1px solid hsla(0, 0%, 0%, 0.424);
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth .btn {
+  align-self: center;
+}
