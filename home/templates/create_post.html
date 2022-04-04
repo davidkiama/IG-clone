@@ -5,7 +5,7 @@
 <div class="box">
     <h3 class="heading-3">Create Post</h3>
 
-    <form action="" class="create-form" method="post">
+    <form class="create-form" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="file" name="file">
 

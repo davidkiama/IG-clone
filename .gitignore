@@ -4,3 +4,6 @@ virtual/
 __pycache__/
 instagram/__pycache__/settings.cpython-38.pyc
 instagram/__pycache__/urls.cpython-38.pyc
+
+
+media/

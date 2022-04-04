@@ -2,6 +2,8 @@ from email.mime import image
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from django.core.files.storage import FileSystemStorage
+
 
 from .models import Image
 
@@ -17,9 +19,9 @@ def home(request):
 def create_post(request):
     if request.method == 'POST':
 
-        caption = request.POST['caption']
-        file = request.POST['file']
         user = request.user
+        caption = request.POST['caption']
+        file = request.FILES['file']
 
         new_post = Image(image=file, caption=caption, profile=user)
         new_post.save_image()
