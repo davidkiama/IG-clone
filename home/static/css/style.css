@@ -133,6 +133,15 @@ a {
   filter: blur(2px);
 }
 
+
+.main {
+  min-height: 90vh;
+  background-color: #f8f8f8;
+
+  display: flex;
+}
+
+
 .sidebar {
   flex: 1 0 20%;
   max-width: 20%;
@@ -193,4 +202,10 @@ a {
 .create-form textarea{
   border-radius: 10px;
   color: black;
+}
+
+.content {
+  flex: 1 1 auto;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }

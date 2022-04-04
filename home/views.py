@@ -10,7 +10,8 @@ from .models import Image
 
 
 def home(request):
-    return render(request, 'base.html')
+    images = Image.objects.all()
+    return render(request, 'index.html', {'images': images})
 
 
 def create_post(request):
@@ -19,9 +20,6 @@ def create_post(request):
         caption = request.POST['caption']
         file = request.POST['file']
         user = request.user
-        print('**********************')
-        print(file)
-        print(caption)
 
         new_post = Image(image=file, caption=caption, profile=user)
         new_post.save_image()

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="content">
+
+
+    {% if images %}
+
+    {% for image in images %}
+
+    <img src="{{image.image.url}}" alt="Img">
+
+    <p>{{image.caption}} </p>
+    {% endfor %}
+
+    {% else %}
+
+    <p>No images found</p>
+    {% endif %}
+
+
+</section>
+
+
+{% endblock %}
