@@ -1,6 +1,9 @@
+from email.mime import image
+
 from django.shortcuts import render, redirect
-from django.contrib.auth import login
-from .models import User
+from django.contrib.auth.models import User
+
+from .models import Image
 
 
 # Create your views here.
@@ -10,32 +13,19 @@ def home(request):
     return render(request, 'base.html')
 
 
-from django.shortcuts import get_object_or_404
-
-
-def check_user(username, password):
-    # check if user exists
-    user = User.objects.filter(username=username).first()
-
-    if not user:
-        return False
-    if user and user.password == password:
-        return user
-
-
-def login(request):
+def create_post(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = check_user(username=username, password=password)
 
-        if user:
-            print('exists')
-            redirect(home)
-        return redirect(login)
-        #     # Redirect to a success page.
-        #     print('Login successs')
+        caption = request.POST['caption']
+        file = request.POST['file']
+        user = request.user
+        print('**********************')
+        print(file)
+        print(caption)
 
-        # else:
-        #     print('Invalid login')
-    return render(request, 'login.html', )
+        new_post = Image(image=file, caption=caption, profile=user)
+        new_post.save_image()
+
+        return redirect('home')
+
+    return render(request, "create_post.html")

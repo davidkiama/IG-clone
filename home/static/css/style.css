@@ -179,3 +179,18 @@ a {
 .auth .btn {
   align-self: center;
 }
+
+
+.create-form{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30rem;
+ 
+}
+
+.create-form textarea{
+  border-radius: 10px;
+  color: black;
+}

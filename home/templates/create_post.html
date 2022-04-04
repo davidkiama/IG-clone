@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="box">
+    <h3 class="heading-3">Create Post</h3>
+
+    <form action="" class="create-form" method="post">
+        {% csrf_token %}
+        <input type="file" name="file">
+
+        <textarea name="caption" cols="30" rows="8" placeholder="Add a caption">
+        </textarea>
+
+        <button class="btn">
+            Post
+        </button>
+    </form>
+</div>
+
+{% endblock %}
