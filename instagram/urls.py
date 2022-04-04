@@ -19,13 +19,13 @@ from django.contrib.auth import views
 from django_registration.backends.one_step.views import RegistrationView
 
 from django.contrib.auth import views as auth_views
-from home import views as user_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
+    path('members/', include('django.contrib.auth.urls')),
 
-    path('register/', user_views.register, name='register'),
-
+    path('', include('members.urls')),
 
 ]

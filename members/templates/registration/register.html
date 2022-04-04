@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="box">
+    <h3 class="heading-3">Sign Up</h3>
+
+    <form method="POST" action="" class="auth" autocomplete="off">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn">Sign Up</button>
+    </form>
+</div>
+
+{% endblock %}

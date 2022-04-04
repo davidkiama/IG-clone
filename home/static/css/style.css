@@ -33,7 +33,7 @@ body {
 
 /* Components */
 .box {
-  width: 32rem;
+  /* width: 32rem; */
   padding: 2rem;
   position: absolute;
   top: 50%;
@@ -166,7 +166,8 @@ a {
   flex-direction: column;
 }
 
-.auth__input {
+.auth input {
+  width: 100%;
   background-color: var(--color-grey);
   font-size: 1.6rem;
   outline: none;

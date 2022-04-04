@@ -18,14 +18,17 @@
                 <a href="#">Instagram</a>
             </h1>
 
+
             <nav class="navbar">
-                <a href="#" class="navbar-item btn">
+                {% if not user.is_authenticated %}
+                <a href="{% url 'login' %}" class="navbar-item btn">
                     Login
                 </a>
 
-                <a href="#" class="navbar-item btn">
+                <a href="{% url 'register' %}" class="navbar-item btn">
                     Sign Up
                 </a>
+                {% endif %}
             </nav>
 
         </header>
@@ -44,6 +47,7 @@
 
                 </div>
 
+                {% if user.is_authenticated %}
                 <div class="profile-image">
                     <img src="../static/img/k" alt="Profile Img"
                         class="user-profile__img">
@@ -53,11 +57,14 @@
                     </a>
                 </div>
 
-                <a href="#" class="logout btn">
+
+                <a href="{% url 'logout' %} " class="logout btn">
                     <img src="#" class="logout-icon v">
                     Logout
                 </a>
+                {% endif %}
             </aside>
+
 
             {% block content %}
             {% endblock %}
