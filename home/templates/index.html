@@ -4,19 +4,42 @@
 <section class="content">
 
 
-    {% if images %}
+    <div class="content gallery">
+        <ul>
+            {% if images %}
 
-    {% for image in images %}
 
-    <img src="{{image.image.url}}" alt="Img">
+            <!-- Comes from js -->
+            {% for image in images %}
+            <li class="gal-list">
+                <a href=" #">
+                    <img src="{{image.image.url}} " alt="Gal Img" loading="lazy"
+                        class="gal-img" />
+                </a>
 
-    <p>{{image.caption}} </p>
-    {% endfor %}
+                <div class="gal-list-desc">
+                    <div>
+                        <a href="#" class="gal-list__caption">
+                            <svg class="icon">
+                                <use xlink:href="#"></use>
+                            </svg>
+                            {{image.caption}}
+                        </a>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
 
-    {% else %}
+            {% else %}
 
-    <p>No images found</p>
-    {% endif %}
+            <p>No images found</p>
+
+            {% endif %}
+
+        </ul>
+
+
+    </div>
 
 
 </section>
