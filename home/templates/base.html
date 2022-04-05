@@ -25,6 +25,12 @@
                 <a href="{% url 'create-post' %}" class="navbar-item btn">
                     Create Post
                 </a>
+
+                <a href="{% url 'logout' %} " class="logout btn navbar-item">
+                    <img src="{% static 'img/shutdown-svgrepo-com.svg' %}"
+                        class="logout-icon v">
+
+                </a>
                 {% else %}
                 <a href="{% url 'login' %}" class="navbar-item btn">
                     Login
@@ -39,37 +45,6 @@
         </header>
 
         <main class="main">
-            <aside class="sidebar">
-                <div class="hashtags">
-                    <h4 class="sidebar__title">
-                        Categories
-                    </h4>
-
-                    <a href="#" class="hashtagj">
-                        #hash
-                    </a>
-
-
-                </div>
-
-                {% if user.is_authenticated %}
-                <div class="profile-image">
-                    <img src="../static/img/k" alt="Profile Img"
-                        class="user-profile__img">
-
-                    <a href="#">
-                        <img src="#" alt="Edit" class="edit-icon--profile__img">
-                    </a>
-                </div>
-
-
-                <a href="{% url 'logout' %} " class="logout btn">
-                    <img src="{% static 'img/shutdown-svgrepo-com.svg' %}"
-                        class="logout-icon v">
-                    Logout
-                </a>
-                {% endif %}
-            </aside>
 
 
             {% block content %}
