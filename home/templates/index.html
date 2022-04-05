@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static%}
 
 {% block content %}
 <section class="content">
@@ -20,12 +21,16 @@
                 <div class="gal-list-desc">
                     <div>
                         <a href="#" class="gal-list__caption">
-                            <svg class="icon">
-                                <use xlink:href="#"></use>
-                            </svg>
+
                             {{image.caption}}
                         </a>
                     </div>
+
+                    <svg class="icon icon--copy">
+                        <use xlink:href="{%static 'img/sprite.svg'%}#heart-svgrepo-com">
+                        </use>
+
+                    </svg>
                 </div>
             </li>
             {% endfor %}
