@@ -26,11 +26,21 @@
                         </a>
                     </div>
 
-                    <svg class="icon icon--copy">
-                        <use xlink:href="{%static 'img/sprite.svg'%}#heart-svgrepo-com">
-                        </use>
+                    {% if user.is_authenticated %}
+                    <form action=" {% url 'like_post' image.pk %} " method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-like" name="image_id"
+                            value=" {{image.id}} ">
+                            <svg class="icon icon--copy liked_btn">
+                                <use
+                                    xlink:href="{%static 'img/sprite.svg'%}#heart-svgrepo-com">
+                                </use>
+                            </svg>
+                        </button>
+                    </form>
+                    {% endif %}
 
-                    </svg>
+
                 </div>
             </li>
             {% endfor %}

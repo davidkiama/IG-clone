@@ -29,3 +29,15 @@ def create_post(request):
         return redirect('home')
 
     return render(request, "create_post.html")
+
+
+def like_post(request, pk):
+    image = Image.objects.get(id=request.POST['image_id'])
+
+    if request.user in image.likes.all():
+        image.likes.remove(request.user)
+
+    else:
+        image.likes.add(request.user)
+
+    return redirect('home')
