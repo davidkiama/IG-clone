@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+
+from cloudinary.models import CloudinaryField
 # Create your models here.
 
 
@@ -19,7 +21,7 @@ class Profile(models.Model):
 
 class Image(models.Model):
     profile = models.ForeignKey(User, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images')
+    image = CloudinaryField('image')
     caption = models.TextField(blank=True)
     likes = models.ManyToManyField(User, related_name='likes', blank=True)
     date_posted = models.DateTimeField(auto_now_add=True)

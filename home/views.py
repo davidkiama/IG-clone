@@ -15,7 +15,6 @@ def home(request):
 
     try:
         user_info = User.objects.get(username=request.user.username)
-        print(user_info)
     except User.DoesNotExist:
         user_info = None
         liked_posts = None
