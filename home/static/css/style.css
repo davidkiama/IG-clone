@@ -96,8 +96,8 @@ a {
 }
 
 .logout-icon {
-  height: 2.5rem;
-  padding-right: 1rem;
+  height: 2rem;
+  
 }
 
 .header {
@@ -287,8 +287,10 @@ a {
 .gal-list__location:hover svg {
   fill: gold;
 }
-.icon--copy:hover {
-  fill: gold;
+
+.icon--like{
+  fill: #eee;
+ 
 }
 .liked_btn{
   fill: gold;
