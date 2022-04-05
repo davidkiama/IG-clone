@@ -15,7 +15,7 @@ The following languages and technologies have been used on this project:
 
 ## Live Demo
 
-[Live demo](https://django-instagram-clone-xxiv.herokuapp.com/)
+[Live demo](https://django-instagram-clone-xxiv.herokuapp.com)
 
 ## Author
 
