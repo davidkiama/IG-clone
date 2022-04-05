@@ -31,11 +31,23 @@
                         {% csrf_token %}
                         <button type="submit" class="btn-like" name="image_id"
                             value=" {{image.id}} ">
+                            <!-- check if user has liked post -->
+
+
+                            {% if image in liked_posts %}
                             <svg class="icon icon--copy liked_btn">
                                 <use
                                     xlink:href="{%static 'img/sprite.svg'%}#heart-svgrepo-com">
                                 </use>
                             </svg>
+
+                            {% else %}
+                            <svg class="icon icon--copy ">
+                                <use
+                                    xlink:href="{%static 'img/sprite.svg'%}#heart-svgrepo-com">
+                                </use>
+                            </svg>
+                            {% endif %}
                         </button>
                     </form>
                     {% endif %}

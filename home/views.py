@@ -1,11 +1,10 @@
-from email.mime import image
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.core.files.storage import FileSystemStorage
 
 
-from .models import Image
+from .models import Image, Like
 
 
 # Create your views here.
@@ -13,7 +12,16 @@ from .models import Image
 
 def home(request):
     images = Image.objects.all()
-    return render(request, 'index.html', {'images': images})
+
+    try:
+        user_info = User.objects.get(username=request.user.username)
+        print(user_info)
+    except User.DoesNotExist:
+        user_info = None
+        liked_posts = None
+    liked_posts = Image.objects.filter(likes=user_info).all()
+
+    return render(request, 'index.html', {'images': images, "liked_posts": liked_posts})
 
 
 def create_post(request):

@@ -31,3 +31,14 @@ class Image(models.Model):
 
     def save_image(self):
         self.save()
+
+
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.ForeignKey(Image, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username
+
+    def save_like(self):
+        self.save()
