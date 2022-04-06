@@ -74,14 +74,16 @@ WSGI_APPLICATION = 'instagram.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 # postgres://sltzjerchnoamj:e255ba8e15b1e870edeb2334fb1bc4059e1e5fd401d6038a2608788e9ec93c32@ec2-52-73-155-171.compute-1.amazonaws.com:5432/dfaclajud7pe33
+# postgres://vyuaeuvxjkwanr:8412513bd35eddd3922e2d69a431f93c63380ce57b411b6fae2604c02f03db50@ec2-3-224-125-117.compute-1.amazonaws.com:5432/d7jmftv3joabas
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dfaclajud7pe33',
-        'USER': 'sltzjerchnoamj',
-        'PASSWORD': 'e255ba8e15b1e870edeb2334fb1bc4059e1e5fd401d6038a2608788e9ec93c32',
-        'HOST': 'ec2-52-73-155-171.compute-1.amazonaws.com',
+        'NAME': 'd7jmftv3joabas',
+        'USER': 'vyuaeuvxjkwanr',
+        'PASSWORD': '8412513bd35eddd3922e2d69a431f93c63380ce57b411b6fae2604c02f03db50',
+        'HOST': 'ec2-3-224-125-117.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
